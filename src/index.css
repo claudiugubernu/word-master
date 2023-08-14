@@ -80,7 +80,7 @@ button.primary,
 
 button.secondary,
 .button.secondary {
-    border: 1px solid var(--button-color-primary);
+    border: 1px solid var(--button-color-secondary);
     border-radius: 3.75rem;
     background-image: var(--blue-gradient);
 	box-shadow: 0 1rem 1.25rem 0 rgba(116, 155, 255, 0.5),
