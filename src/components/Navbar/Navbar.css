@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px;
+  position: relative;
+  height: 100px;
+}
+
+.navbar .left-center.m-auto {
+  margin: 0 auto;
+}

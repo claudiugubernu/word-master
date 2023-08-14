@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap');
+
+:root {
+    --color-primary: #222222;
+    --color-primary-faded: #303030;
+    --color-primary-light: #ffffff80;
+    --color-secondary: #FFFFFF;
+    --color-start-btn: #ACA389;
+    --color-guess-btn: #C76136;
+    --color-buy-btn: #36C756;
+    --color-bought-btn: #C7C136;
+    --color-froze-btn: #749BFF;
+
+    --game-gradient: linear-gradient(0deg, rgba(178,86,45,1) 0%, rgba(69,36,21,1) 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+#root {
+    overflow: hidden;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    background: var(--game-gradient);
+    color: var(--color-secondary);
+    height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    position: relative;
+}
+
+button,
+.button {
+    text-transform: uppercase;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 5px;
+    color: var(--color-secondary);
+    font-size: 1.75em;
+}
+
+button.guess,
+.button.guess {
+    background-color: var(--color-guess-btn);
+}
+
+button.freeze,
+.button.freeze {
+    background-color: var(--color-froze-btn);
+}
+
+button.buy,
+.button.buy {
+    background-color: var(--color-buy-btn);
+    padding: 10px 20px;
+}
+
+button.buy:disabled {
+    background-color: var(--color-froze-btn);
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.danger {
+    color: var(--color-guess-btn);
+}
+
+@media screen and (max-width: 375px) {
+    button,
+    .button {
+        font-size: .75em;
+    }
+}
