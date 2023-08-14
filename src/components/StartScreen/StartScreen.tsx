@@ -9,8 +9,8 @@ const StartScreen = () => {
       </div>
       <div className="content-wrapper">
         <div className="button-group align-vertical">
-          <button className="button freeze">Start Game</button>
-          <button className="button freeze">Instructions</button>
+          <button className="button primary">Start Game</button>
+          <button className="button secondary">Instructions</button>
         </div>
       </div>
     </div>
