@@ -1,0 +1,16 @@
+.start-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+
+  .image-wrapper {
+    max-width: 320px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

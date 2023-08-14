@@ -1,11 +1,11 @@
-import Navbar from "./components/Navbar/Navbar";
+import StartScreen from "./components/StartScreen/StartScreen";
 
 
 function App() {
 
   return (
     <main className="App">
-       <Navbar />
+       <StartScreen />
     </main>
   )
 }
