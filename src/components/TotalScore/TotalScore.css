@@ -1,0 +1,14 @@
+.total-score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.total-score .wallet {
+  width: 30px;
+}
+
+.total-score .score {
+  font-size: 1.5em;
+  align-self: flex-end;
+}

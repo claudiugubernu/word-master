@@ -1,0 +1,7 @@
+.timer {
+  min-width: 60px;
+}
+
+.timer .time {
+  font-size: 1.5rem;
+}

@@ -1,0 +1,87 @@
+.level {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px 0;
+
+  .level-points {
+    font-weight: 300;
+    font-size: 1.5em;
+  }
+
+  .level-question {
+    align-self: center;
+    font-weight: 300;
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 70%;
+  }
+
+  .level-word {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .level-word-letter {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2em;
+
+    &.error {
+      animation: shake 4s forwards;
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  1.78571% {
+    transform: translate(5px, 0);
+  }
+  3.57143% {
+    transform: translate(0, 0);
+  }
+  5.35714% {
+    transform: translate(5px, 0);
+  }
+  7.14286% {
+    transform: translate(0, 0);
+  }
+  8.92857% {
+    transform: translate(5px, 0);
+  }
+  10.71429% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .level {
+    gap: 20px;
+  }
+
+  .level .level-points {
+    font-size: 1rem;
+  }
+
+  .level .level-question {
+    font-size: 0.75em;
+  }
+}
