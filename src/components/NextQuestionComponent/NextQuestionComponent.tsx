@@ -10,6 +10,7 @@ const NextQuestionComponent: React.FC = () => {
     endGame,
     playAnotherGame,
     changeQuestion,
+    quitGame,
   } = useGameContext();
 
   return (
@@ -40,11 +41,18 @@ const NextQuestionComponent: React.FC = () => {
             : ``}
         </h2>
         {endGame ? (
-          <button
-            className='button buy'
-            onClick={playAnotherGame}>
-            Play Another Game
-          </button>
+          <>
+            <button
+              className='button buy'
+              onClick={playAnotherGame}>
+              Play Another Game
+            </button>
+            <button
+              className='button buy'
+              onClick={quitGame}>
+              Quit
+            </button>
+          </>
         ) : (
           <button
             className='button buy'

@@ -136,6 +136,10 @@ const GameProvider = ({ children }: any) => {
     }
   };
 
+  const quitGame = () => {
+    window.location.reload();
+  };
+
   // User click input
   const handleLetterClick = (e: React.MouseEvent) => {
     const target = e.target as HTMLButtonElement;
@@ -276,6 +280,7 @@ const GameProvider = ({ children }: any) => {
         changeQuestion,
         goNextQuestion,
         handleLetterClick,
+        quitGame,
       }}>
       {children}
     </GameContext.Provider>
