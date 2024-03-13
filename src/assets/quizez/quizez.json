@@ -38,5 +38,25 @@
         "answer": "aching"
       }
     ]
+  },
+  {
+    "id": 2,
+    "game": [
+      {
+        "id": "1a",
+        "question": "Question one of 3rd game",
+        "answer": "pain"
+      },
+      {
+        "id": "1b",
+        "question": "Question two of 3rd game",
+        "answer": "smart"
+      },
+      {
+        "id": "1c",
+        "question": "Question three of 3rd game",
+        "answer": "aching"
+      }
+    ]
   }
 ]

@@ -15,7 +15,7 @@ const GameProvider = ({ children }: any) => {
     id: 0,
     game: [],
   });
-  const [gameNotPlayed, setGameNotPlayed] = useState<currentGameProps[]>([]);
+  const [gamesNotPlayed, setGamesNotPlayed] = useState<GameProps[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
   const [currentWord, setCurrentWord] = useState<string>('');
 
@@ -40,13 +40,8 @@ const GameProvider = ({ children }: any) => {
   useEffect(() => {
     setRandomGame(gameData[Math.floor(Math.random() * gameData.length)]);
     setCurrentGame(randomGame.game);
-    setGameNotPlayed(
-      gameData
-        .map((game) => game.game) // Extract the game property from each GameProps object
-        .flat() // Flatten the array of arrays
-        .filter((game) => parseInt(game.id) !== randomGame.id)
-    );
-  }, [randomGame]);
+    setGamesNotPlayed(gameData.filter((game) => game.id !== randomGame.id));
+  }, [currentGame]);
 
   // Set currentWord and wordPoints
   useEffect(() => {
@@ -84,6 +79,27 @@ const GameProvider = ({ children }: any) => {
   // Change game
   const playAnotherGame = () => {
     // grab another game and reset all
+    const newRandomGame =
+      gamesNotPlayed[Math.floor(Math.random() * gamesNotPlayed.length)];
+    setCurrentGame(newRandomGame.game);
+    setRandomGame(newRandomGame);
+    setGamesNotPlayed(
+      gamesNotPlayed.filter((game) => game.id !== newRandomGame.id)
+    );
+    setCurrentQuestion(0);
+    setWordPoints(0);
+    setTotalPoints(0);
+    setGuess('');
+    setEndGame(false);
+    setTakeNextQuestion(false);
+    setFreezeTime(false);
+    setErrorCSSClass('');
+    setDisabledGameControls(!disabledGameControls);
+    setTakeNextQuestion(!takeNextQuestion);
+    // Reset timers if needed
+    gameTime.resetTimer();
+    gameTime.startTimer();
+    guessTime.resetTimer();
   };
 
   // Here we handle changing question on correct guess
@@ -132,7 +148,6 @@ const GameProvider = ({ children }: any) => {
         setTimeout(() => {
           setErrorCSSClass('');
         }, 500);
-        console.log('short');
         return;
       }
       // Check if guess matches guess
@@ -151,7 +166,6 @@ const GameProvider = ({ children }: any) => {
         setTimeout(() => {
           setErrorCSSClass('');
         }, 500);
-        console.log('wrong word');
       }
     }
     // If backspace remove last letter from guess
@@ -177,7 +191,6 @@ const GameProvider = ({ children }: any) => {
             setTimeout(() => {
               setErrorCSSClass('');
             }, 500);
-            console.log('short');
             return;
           }
           // Check if guess matches guess
@@ -199,7 +212,6 @@ const GameProvider = ({ children }: any) => {
             setTimeout(() => {
               setErrorCSSClass('');
             }, 500);
-            console.log('wrong word');
             setErrorCSSClass('error');
           }
         }
